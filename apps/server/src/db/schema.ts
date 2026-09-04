@@ -1,12 +1,8 @@
 import { relations } from "drizzle-orm";
-import {
-  integer,
-  sqliteTable,
-  text,
-} from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const decks = sqliteTable("decks", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+  id: text("id").primaryKey(),
 
   name: text("name").notNull(),
 
@@ -20,9 +16,9 @@ export const decks = sqliteTable("decks", {
 });
 
 export const cards = sqliteTable("cards", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+  id: text("id").primaryKey(),
 
-  deckId: integer("deck_id")
+  deckId: text("deck_id")
     .notNull()
     .references(() => decks.id),
 
@@ -32,9 +28,9 @@ export const cards = sqliteTable("cards", {
 
   backText: text("back_text").notNull(),
 
-  frontImageId: integer("front_image_id"),
+  frontImageId: text("front_image_id"),
 
-  backImageId: integer("back_image_id"),
+  backImageId: text("back_image_id"),
 
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
 

@@ -8,6 +8,13 @@
       "when": 1788021861474,
       "tag": "0000_spicy_squadron_supreme",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1788527105475,
+      "tag": "0001_lumpy_gorilla_man",
+      "breakpoints": true
     }
   ]
 }
